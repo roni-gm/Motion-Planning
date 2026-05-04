@@ -4,10 +4,10 @@
 
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue?logo=python)
 ![License](https://img.shields.io/badge/License-MIT-green)
-![Algorithms](https://img.shields.io/badge/Algorithms-5-orange)
+![Algorithms](https://img.shields.io/badge/Algorithms-6-orange)
 ![Status](https://img.shields.io/badge/Status-Active-brightgreen)
 
-*A comprehensive collection of classical and sampling-based motion planning algorithms implemented in Python, with real-time visualization using Matplotlib.*
+*A comprehensive collection of classical, sampling-based, and swarm intelligence motion planning algorithms implemented in Python, with real-time visualization using Matplotlib.*
 
 </div>
 
@@ -43,6 +43,7 @@ Motion planning is the problem of finding a collision-free path for a robot movi
 | 3 | [D* (D-Star Lite)](./Algoritma%20D%20Star/README.md) | Grid-based, Dynamic | ✅ Yes | Discrete |
 | 4 | [PRM](./Algoritma%20Probabilistic%20Road-Map%20(PRM)/README.md) | Sampling-based, Multi-query | ❌ Approx | Continuous |
 | 5 | [RRT](./Algoritma%20Rapid-Exploring%20Random%20Trees%20(RRT)/README.md) | Sampling-based, Single-query | ❌ Sub-optimal | Continuous |
+| 6 | [PSO](./Particle%20Swarm%20Optimation%20(PSO)/README.md) | Swarm Intelligence, Metaheuristic | ❌ Approx | Continuous |
 
 ---
 
@@ -70,9 +71,13 @@ Motion-Planning/
 │   ├── probabilistic_road_map_aStar.py                ← PRM + A* search
 │   └── probabilistic_road_map_dijkstra.py             ← PRM + Dijkstra search
 │
-└── Algoritma Rapid-Exploring Random Trees (RRT)/
-    ├── README.md                                      ← RRT documentation
-    └── rapid_exploring_random_trees.py                ← RRT implementation
+├── Algoritma Rapid-Exploring Random Trees (RRT)/
+│   ├── README.md                                      ← RRT documentation
+│   └── rapid_exploring_random_trees.py                ← RRT implementation
+│
+└── Particle Swarm Optimation (PSO)/
+    ├── README.md                                      ← PSO documentation
+    └── pso.py                                         ← PSO implementation
 ```
 
 ---
@@ -112,6 +117,10 @@ python probabilistic_road_map_dijkstra.py
 # RRT
 cd "Algoritma Rapid-Exploring Random Trees (RRT)"
 python rapid_exploring_random_trees.py
+
+# PSO
+cd "Particle Swarm Optimation (PSO)"
+python pso.py
 ```
 
 ---
@@ -128,6 +137,7 @@ python rapid_exploring_random_trees.py
 | High-dimensional space (robot arm), multiple queries | **PRM** |
 | Need a fast feasible path, don't need optimality | **RRT** |
 | Need fast + asymptotically optimal path | **RRT\*** *(extension)* |
+| Continuous parameter optimization, no gradient available | **PSO** |
 
 ### Performance Summary
 
@@ -138,6 +148,7 @@ python rapid_exploring_random_trees.py
 | D* Lite | ✅ Complete | ✅ Optimal | Fast replan | Medium | ✅ |
 | PRM | ✅ Prob. complete | ❌ Approx | Fast multi-query | Low | ❌ |
 | RRT | ✅ Prob. complete | ❌ Sub-optimal | Very fast | Low | ❌ |
+| PSO | ✅ Prob. complete | ❌ Approx | Fast (parallel) | Low | ❌ |
 
 ---
 
@@ -148,6 +159,7 @@ python rapid_exploring_random_trees.py
 - Koenig, S., & Likhachev, M. (2002). *D\* Lite*. AAAI.
 - Kavraki, L. E., et al. (1996). *Probabilistic roadmaps for path planning in high-dimensional configuration spaces*. IEEE Transactions on Robotics.
 - LaValle, S. M. (1998). *Rapidly-Exploring Random Trees: A New Tool for Path Planning*. Tech Report.
+- Kennedy, J., & Eberhart, R. (1995). *Particle swarm optimization*. Proceedings of ICNN'95 — International Conference on Neural Networks.
 - LaValle, S. M. (2006). *Planning Algorithms*. Cambridge University Press. — [Free online](http://lavalle.pl/planning/)
 - PythonRobotics by Atsushi Sakai — [GitHub](https://github.com/AtsushiSakai/PythonRobotics)
 
